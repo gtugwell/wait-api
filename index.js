@@ -15,15 +15,12 @@ app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
   })
 
-app.listen(port, () => {
-    console.log(`App running on port ${port}.`)
-})
-
 
 const db = require('./queries')
 app.get('/destination/:dest', db.getDestination)
-app.post('/post', db.createPost)
-// app.get('/users/:id', db.getUserById)
-// app.post('/users', db.createUser)
-// app.put('/users/:id', db.updateUser)
-// app.delete('/users/:id', db.deleteUser)
+app.get('/post/:flight_num/:dest/:title/:image_url/:post_content/:tags', db.createPost)
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`)
+})
+
