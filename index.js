@@ -21,7 +21,7 @@ app.listen(port, () => {
 
 
 const db = require('./queries')
-app.get('/users/:dest', db.getUsers)
+app.get('/flights/:dest', db.getFlights)
 // app.get('/users/:id', db.getUserById)
 // app.post('/users', db.createUser)
 // app.put('/users/:id', db.updateUser)
