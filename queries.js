@@ -8,7 +8,7 @@ const pool = new Pool({
 })
 
 
-const getFlights = (request, response) => {
+const getDestination = (request, response) => {
   const dest = request.params.dest
     pool.query('SELECT * FROM public.user_messages WHERE dest = $1',[dest], (error, results) => {
       if (error) {
@@ -32,6 +32,6 @@ const createPost = (request, response) => {
 
 
 module.exports = {
-    getFlights,
+    getDestination,
     createPost
   }
